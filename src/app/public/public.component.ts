@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiOmdbService } from '../services/api-omdb.service';
 
 @Component({
   selector: 'app-public',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
 
-  constructor() { }
+  datas: any = []
+
+  constructor(
+    private movies:ApiOmdbService
+  ) { }
 
   ngOnInit(): void {
+    this.movies.getMovies().subscribe((data: any) => [
+      // console.warn("data", data)
+      this.datas = data.Search
+    ])
   }
 
 }
