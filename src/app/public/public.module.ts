@@ -4,6 +4,7 @@ import { DetailComponent } from './detail/detail.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PublicComponent } from './public.component';
 import { MaterialDesign } from '../material-design/material';
+import { AnagramComponent } from './anagram/anagram.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [DetailComponent],
+  declarations: [DetailComponent, AnagramComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
